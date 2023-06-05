@@ -1,0 +1,263 @@
+---
+title: "Práctica Baterias"
+author: "Luis Fernando Mamani Huanto"
+date: "2023-06-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Caso de estudio práctico - Baterías de autoelevador
+
+Recuperación de datos de las Baterias Varta 75
+
+```{r}
+datos_75 <- c(1 , 19 , 0,
+2 , 18 , 0,
+3 , 22 , 0,
+4 , 25 , 0,
+5 , 17 , 0,
+6 , 30 , 0,
+7 , 29 , 0,
+8 , 32 , 0,
+9 , 31 , 0,
+10, 33 , 0,
+11, 38 , 0,
+12, 36 , 0,
+13, 40 , 1,
+14, 40 , 0,
+15, 42 , 0,
+16, 45 , 0,
+17, 47 , 0,
+18, 49 , 0,
+19, 55 , 0,
+20, 58 , 1,
+21, 57 , 1,
+22, 63 , 1,
+23, 65 , 1,
+24, 65 , 1,
+25, 66 , 1)
+Muestra_75 <- matrix(datos_75, ncol = 3, byrow = TRUE)
+Muestra_75
+```
+
+Recuperación de datos de las Baterias Siemens 1005
+
+```{r}
+datos_1005 <- c(1 , 19 , 0,
+2 , 18 , 0,
+3 , 22 , 0,
+4 , 25 , 0,
+5 , 17 , 0,
+6 , 30 , 0,
+7 , 29 , 0,
+8 , 32 , 0,
+9 , 31 , 0,
+10, 33 , 0,
+11, 38 , 1,
+12, 36 , 0,
+13, 40 , 1,
+14, 40 , 0,
+15, 42 , 1,
+16, 45 , 0,
+17, 47 , 1,
+18, 49 , 0,
+19, 55 , 0,
+20, 58 , 1,
+21, 57 , 1,
+22, 63 , 1,
+23, 65 , 1,
+24, 65 , 1,
+25, 66 , 1,
+26, 69 , 1,
+27, 70 , 1,
+28, 71 , 1,
+29, 75 , 1,
+30, 86 , 1,
+31, 79 , 1,
+32, 88 , 1,
+33, 89 , 0,
+34, 92 , 1,
+35, 84 , 1)
+Muestra_1005 <- matrix(datos_1005, ncol = 3, byrow = TRUE)
+Muestra_1005
+```
+
+Histograma de las Baterias Varta 75
+
+```{r}
+hist(Muestra_75[ ,2], main = "Histograma de las Baterias Vartra 75" )
+```
+
+
+Cálculo del promedio de la duracion de las baterias Varta 75
+
+```{r}
+vida_media_75 <- mean(Muestra_75[ ,2])
+vida_media_75
+```
+
+Cálculo del desvio estandar de la duracion de las baterias Varta 75
+
+```{r}
+vida_desv_75 <- sd(Muestra_75[ ,2])
+vida_desv_75
+```
+
+Histograma de las Baterias Siemens 1005
+
+```{r}
+hist(Muestra_1005[ ,2], main = "Histograma de las Baterias Siemens 1005")
+```
+
+Cálculo del promedio de la duracion de las baterias Siemens 1005 
+
+```{r}
+vida_media_1005 <- mean(Muestra_1005[ ,2])
+vida_media_1005
+```
+
+Cálculo del desvio estandar de la duracion de las baterias Siemens 1005
+
+```{r}
+vida_desv_1005 <- sd(Muestra_1005[ ,2])
+vida_desv_1005
+```
+
+```{r}
+boxplot(Muestra_75[ ,2])
+```
+```{r}
+boxplot(Muestra_1005[ ,2])
+```
+
+Muestra de Historial de Carga Baterias Varta 75
+
+```{r}
+plot(Muestra_75[ , 1:2],main = "Resumen de Casos",xlab = "Ficha Bateria",ylab="Edad", type="b", col="RED")
+```
+
+Muestra de Historial de Carga Baterias Siemens 1005
+
+```{r}
+plot(Muestra_1005[ , 1:2],main = "Resumen de Casos",xlab = "Ficha Bateria",ylab="Edad", type="b", col="RED")
+```
+
+Histograma de Edades de la Batería Varta 75
+
+```{r}
+hist(Muestra_75[ ,2],breaks = 10, main = "Histogramas de edades")
+```
+
+Histograma de Edades de la Batería Siemens 1005
+
+```{r}
+hist(Muestra_1005[ ,2],breaks = 10, main = "Histogramas de edades")
+```
+
+Gráficos de Densidad Baterias Varta 75
+
+```{r}
+density(Muestra_75[ ,2])
+```
+
+```{r}
+plot(density(Muestra_75[ ,2]), main = "Gráfico de Densidad", ylab="Cantidad relativa de muestras",xlab="Edad")
+```
+
+Varianza de la Muestra Baterias 75
+
+```{r}
+var_muestra75 <- var(Muestra_75 [ ,2])
+var_muestra75
+```
+
+```{r}
+n75 <- length(Muestra_75[ ,2])
+n75
+```
+
+```{r}
+n_over_n_1 <- n75/(n75-1)
+n_over_n_1
+```
+
+```{r}
+var_poblacion75 <- var(Muestra_75[ ,2]) / n75
+var_poblacion75
+```
+
+```{r}
+vida_desv_75
+```
+
+```{r}
+dsp75 <- sqrt(var_poblacion75)
+dsp75
+```
+
+```{r}
+dspp_75 <- dsp75/n75
+dspp_75
+```
+
+
+
+
+
+
+
+Gráficos de Densidad Baterias Siemens 1005
+
+```{r}
+density(Muestra_1005[ ,2])
+```
+
+```{r}
+plot(density(Muestra_1005[ ,2]), main = "Gráfico de Densidad", ylab="Cantidad relativa de muestras",xlab="Edad")
+```
+
+Varianza de la Muestra Baterias 1005
+
+```{r}
+var_muestra1005 <- var(Muestra_1005 [ ,2])
+var_muestra1005
+```
+
+```{r}
+n1005 <- length(Muestra_1005[ ,2])
+n1005
+```
+
+```{r}
+n_over_n_2 <- n1005/(n1005-1)
+n_over_n_2
+```
+
+```{r}
+var_poblacion1005 <- var(Muestra_1005[ ,2]) / n1005
+var_poblacion1005
+```
+
+```{r}
+vida_desv_1005
+```
+
+```{r}
+dsp1005 <- sqrt(var_poblacion1005)
+dsp1005
+```
+
+```{r}
+dspp_1005 <- dsp1005/n1005
+dspp_1005
+```
+Las Baterias Varta 75 tienen una duración Promedio de 40.88 ± 3.13 semanas
+
+Las Baterias Siemens 1005 tienen una duración promedio de 52.14 ± 3.85 semanas
+
+
+
+
