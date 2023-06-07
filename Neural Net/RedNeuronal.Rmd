@@ -1,0 +1,182 @@
+---
+title: "RedesNuronales"
+author: "Luis Mamani"
+date: "2023-06-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Red Neuronal
+
+Recuperacion del dataset
+
+```{r}
+library(readr)
+Startups <- read_csv("50_Startups_Categoric_LAC.csv")
+```
+
+```{r}
+library(neuralnet)  # regression
+
+library(nnet) # classification 
+
+library(NeuralNetTools)
+
+library(plyr)
+```
+
+```{r}
+Categoric <- read_csv("50_Startups_Categoric_LAC.csv")
+```
+
+# Analisis Exploratorio
+
+```{r}
+tabla1 <- table(Categoric$Pais)
+tabla2 <- table(Categoric$Supervivencia)
+tabla3 <- table(Categoric$Pais,Categoric$Supervivencia)
+```
+
+```{r}
+plot(tabla1, col=c("red","green","blue"))
+```
+
+```{r}
+plot(tabla2, col=c("red","green","blue"))
+```
+
+```{r}
+plot(tabla3, col=c("red","green","blue"))
+```
+
+```{r}
+ind_1 <- which(Categoric$Pais=="Colombia")
+p1 <- as.matrix(Categoric[ind_1,5])
+
+ind_2 <- which(Categoric$Pais=="Ecuador")
+p2 <- as.matrix(Categoric[ind_2,5])
+
+ind_3 <- which(Categoric$Pais=="Chile")
+p3 <- as.matrix(Categoric[ind_3,5])
+```
+
+```{r}
+hp1 <- hist(p1)
+hp2 <- hist(p2)
+hp3 <- hist(p3)
+```
+
+```{r}
+par(mfrow=c(3,1))
+plot( hp1, col=rgb(0,0,1,1/4), xlim=c(30000,200000),ylim=c(0,5),main="Ecuador")
+plot( hp2, col=rgb(1,0,0,1/4),xlim=c(30000,200000),ylim=c(0,10),main="Colombia") 
+plot( hp3, col=rgb(0,0,1,1),xlim=c(30000,200000),ylim=c(0,10),main="Chile") 
+```
+
+```{r}
+par(mfrow=c(1,3))
+plot( hp1, col=rgb(0,0,1,1/4), xlim=c(30000,200000),ylim=c(0,5),main="Ecuador")
+plot( hp2, col=rgb(1,0,0,1/4),xlim=c(30000,200000),ylim=c(0,10),main="Colombia") 
+plot( hp3, col=rgb(1,0,0,1/4),xlim=c(30000,200000),ylim=c(0,10),main="Chile") 
+```
+
+```{r}
+pairs(Categoric[ ,1:3])
+```
+
+```{r}
+boxplot(Categoric[ ,1:3])
+```
+
+```{r}
+Categoric$Pais <- as.numeric(revalue(Categoric$Pais,
+                          c("Colombia"="0", "Ecuador"="1",
+                            "Chile"="2", "Paraguay"="3", "Peru"="4", "Argentina"="5","Uruguay"="6")))
+```
+
+```{r}
+Categoric$Supervivencia <- as.numeric(revalue(Categoric$Supervivencia,
+                          c("BankR"="0", "RevEq"="1",
+                            "SpinOff"="2")))
+```
+
+```{r}
+plot(Categoric$Pais, Categoric$Profit)
+```
+
+```{r}
+boxplot(Categoric$Profit, Categoric$Pais)
+```
+
+```{r}
+normalize<-function(x){
+  return ( (x-min(x))/(max(x)-min(x)))
+}
+
+Startups_norm<-as.data.frame(lapply(Categoric,FUN=normalize))
+summary(Startups_norm$Profit)
+```
+
+#Creacion de la red neural
+
+```{r}
+indice <- sample(2, nrow(Startups_norm), replace = TRUE, prob = c(0.7,0.3))
+startups_train <- Startups_norm[indice==1,]
+startups_test  <- Startups_norm[indice==2,]
+```
+
+```{r}
+library(neuralnet)
+attach(Categoric)
+
+startups_model <- neuralnet(Profit ~ R_D_Spend+ POM + Logist_Market + Pais , data = startups_train)
+
+str(startups_model)
+```
+
+```{r}
+plot(startups_model, rep = "best")
+```
+
+```{r}
+par(mar = numeric(4), family = 'serif')
+plotnet(startups_model, alpha = 0.6)
+```
+
+#Evaluacion del modelo
+
+```{r}
+model_results <- compute(startups_model,startups_test[1:4])
+predicted_profit <- model_results$net.result
+predicted_profit
+
+```
+
+```{r}
+cor(predicted_profit,startups_test$Profit)
+```
+
+#Desnormalizando los resultados
+
+```{r}
+str_max <- max(Startups$Profit)
+str_min <- min(Startups$Profit)
+
+unnormalize <- function(x, min, max) { 
+  return( (max - min)*x + min )
+}
+
+ActualProfit_pred <- unnormalize(predicted_profit,str_min,str_max)
+head(ActualProfit_pred)
+```
+
+
+
+
+
+
+
+
