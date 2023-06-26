@@ -1,0 +1,1044 @@
+%  LaTeX support: latex@mdpi.com
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+% pandoc conditionals added to preserve backwards compatibility with previous versions of rticles
+
+\documentclass[Iberoamerican Journal of Industrial
+Engineering,article,submit,moreauthors,pdftex]{Definitions/mdpi}
+
+
+%% Some pieces required from the pandoc template
+\setlist[itemize]{leftmargin=*,labelsep=5.8mm}
+\setlist[enumerate]{leftmargin=*,labelsep=4.9mm}
+
+
+%--------------------
+% Class Options:
+%--------------------
+
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by:
+% abstract, addendum, article, book, bookreview, briefreport, casereport, comment, commentary, communication, conferenceproceedings, correction, conferencereport, entry, expressionofconcern, extendedabstract, datadescriptor, editorial, essay, erratum, hypothesis, interestingimage, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, studyprotocol, systematicreview, supfile, technicalnote, viewpoint, guidelines, registeredreport, tutorial
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. Remove "pdftex" for (1) compiling with LaTeX & dvi2pdf (if eps figures are used) or for (2) compiling with XeLaTeX.
+
+%=================================================================
+% MDPI internal commands - do not modify
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2023}
+\copyrightyear{2023}
+%\externaleditor{Academic Editor: Firstname Lastname}
+\datereceived{ }
+\daterevised{ } % Comment out if no revised date
+\dateaccepted{ }
+\datepublished{ }
+%\datecorrected{} % For corrected papers: "Corrected: XXX" date in the original paper.
+%\dateretracted{} % For corrected papers: "Retracted: XXX" date in the original paper.
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+%\pdfoutput=1 % Uncommented for upload to arXiv.org
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
+% cleveref: load \crefname definitions after \begin{document}
+
+%=================================================================
+% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Análisis de Personalidad de los Clientes}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Análisis de Personalidad de los Clientes}
+
+% Author Orchid ID: enter ID or remove command
+%\newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
+%\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
+
+
+% Authors, for the paper (add full first names)
+\Author{Luis Fernando Mamani Huanto$^{1,2,\ddagger,*}$, $^{}$}
+
+
+%\longauthorlist{yes}
+
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Luis Fernando Mamani Huanto, }
+
+% MDPI internal command: Authors, for citation in the left column
+%\AuthorCitation{Lastname, F.; Lastname, F.; Lastname, F.}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+\AuthorCitation{Leutnant, D.; Doe, J.}
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+}
+
+% Contact information of the corresponding author
+\corres{Correspondence: \href{mailto:luismhuanto@gmail.com}{\nolinkurl{luismhuanto@gmail.com}};
+Tel.: +591-765-21-257}
+
+% Current address and/or shared authorship
+\firstnote{Current address: Updated affiliation}
+\secondnote{These authors contributed equally to this work.}
+
+
+
+
+
+
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+% Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e. \\)
+\abstract{El presente trabajo consiste en la elaboración de un modelo de
+una red neuronal artificial para analizar la personalidad de los
+clientes y la relación que existe con la cadena de suministros. El
+modelo utiliza lenguaje de programación en R y técnicas de procesamiento
+para identificar los patrones de comportamiento de los clientes. Los
+resultados de este modelo nos muestran que este modelo de red neuronal
+puede predecirla cantidad que van a gastar en determinado producto en
+base los datos de su educación, estado civil, cantidad de niños y
+jóvenes que viven con ellos, sus ingresos y su edad, con esta
+información se puede obtener una mejor adaptación de la oferta a la
+demanda, y esto mejoraría la satisfacción de los clientes y la
+eficiencia de la cadena de suministros.}
+
+
+% Keywords
+\keyword{Customer; Personality; Spend; Supply Chain; Dataset}
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Diversity
+%\LSID{\url{http://}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Encyclopedia
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Advances in Respiratory Medicine
+%\addhighlights{yes}
+%\renewcommand{\addhighlights}{%
+
+%\noindent This is an obligatory section in “Advances in Respiratory Medicine”, whose goal is to increase the discoverability and readability of the article via search engines and other scholars. Highlights should not be a copy of the abstract, but a simple text allowing the reader to quickly and simplified find out what the article is about and what can be cited from it. Each of these parts should be devoted up to 2~bullet points.\vspace{3pt}\\
+%\textbf{What are the main findings?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}\vspace{3pt}
+%\textbf{What is the implication of the main finding?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}
+%}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pandoc syntax highlighting
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+
+% tightlist command for lists without linebreak
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% From pandoc table feature
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypertarget{introducciuxf3n}{%
+\section{Introducción}\label{introducciuxf3n}}
+
+El Análisis de Personalidad de los Clientes es una herramienta valiosa
+para comprender el comportamiento de compra y preferencias de los
+clientes. La personalidad de un individuo influye en sus decisiones de
+compra y puede ser un factor clave en la elección de productos y marcas.
+En este sentido, las empresas tienen grandes cantidades de datos sobre
+sus clientes, y con el tratamiento y análisis correcto de esos datos se
+puede obtener información muy valiosa que se puede utilizar para
+desarrollar estrategias de marketing efectivas y adaptar sus productos y
+servicios a las necesidades y deseos de sus clientes.
+
+Por otro lado, la Cadena de Suministros es un proceso muy importante en
+cualquier empresa, que implica la gestión de la cadena de abastecimiento
+de materias primas, productos y servicios, desde la recepción de
+materias primas hasta la entrega final al consumidor. La eficiencia de
+la cadena de suministros es fundamental para garantizar la satisfacción
+del cliente y el éxito de la empresa.
+
+Ambos conceptos, el Análisis de Personalidad de los Clientes y la Cadena
+de Suministros, están interrelacionados. Las empresas pueden utilizar el
+Análisis de Personalidad de los Clientes para adaptar su Cadena de
+Suministros y garantizar que los productos y servicios estén disponibles
+donde y cuando los clientes los necesiten. Por lo tanto, comprender la
+personalidad de los consumidores y la cadena de suministros son factores
+críticos para el éxito de cualquier empresa.
+
+\hypertarget{estado-del-arte}{%
+\subsection{Estado del Arte}\label{estado-del-arte}}
+
+Realizamos una búsqueda en Google Académico con las siguientes palabras
+clave:
+
+\begin{itemize}
+\tightlist
+\item
+  Customer
+\item
+  Personality
+\item
+  Spend
+\item
+  Supply Chain
+\item
+  Dataset
+\end{itemize}
+
+El resultado nos dio 22800 artículos.
+
+De la revisión, se seleccionaron los articulos más interesantes:
+
+\begin{itemize}
+\tightlist
+\item
+  Woodcock, N., Green, A., Starkey, M., \& Customer Framework™. (2011).
+  Social CRM as a business strategy. Journal of Database Marketing \&
+  Customer Strategy Management, 18, 50-64.
+\end{itemize}
+
+Este artículo trata sobre la Gestión de Relaciones Sociales con los
+Clientes (SCRM) la cual es una estrategia comercial de involucrar a los
+clientes a través de las redes sociales con el objetivo de generar
+confianza y lealtad hacia la marca, además del impacto que puede llegar
+a tener en cualquier empresa. Con el pasar de los años las empresas han
+buscado captar más clientes a través de la publicidad mediante los
+medios de comunicación, pero en los tiempos actuales los clientes
+confían más en las opiniones o experiencias de sus amigos o colegas
+mediante las redes sociales.
+
+El tema central de este artículo es describir el poder de participación
+del cliente, esto podría lograrse mediante las relaciones entre las
+empresas y los mayoristas combinando su conocimiento de las actitudes y
+comportamientos de los clientes para ofrecer una mejor experiencia de
+compra. Es por esta razón que se debe analizar el comportamiento y la
+personalidad de los clientes. Mientras más alto sea el compromiso del
+cliente, mayor será el beneficio para la empresa. Ya que un cliente
+comprometido con una empresa tiene entre 5 y 8 veces más valor que un
+consumidor promedio. Este compromiso es difícil de lograr, pero debe
+ganarse a través de buenos precios y promociones.
+
+\begin{itemize}
+\tightlist
+\item
+  Grover, P., \& Kar, A. K. (2017). Big data analytics: A review on
+  theoretical contributions and tools used in literature. Global Journal
+  of Flexible Systems Management, 18, 203-229.
+\end{itemize}
+
+Este articulo describe los beneficios de un análisis con Big Data, y
+esos datos se podrían usar para tomar mejores decisiones, para estimar
+las condiciones del mercado, conocer el comportamiento del cliente,
+tendencias y patrones. También estos datos se podrían utilizar para
+realizar los pronósticos de ventas, optimización de precios de
+productos, optimización de la demanda y para mejorar la satisfacción del
+cliente.
+
+El principal tema de este articulo trata sobre el uso del análisis del
+Big Data en varias industrias, y como está ayudando a administrar de
+mejor manera sus recursos, ya que este análisis permite una gestión
+flexible de los activos de información en las organizaciones y también
+nos permite monitorear la evolución de los gustos de los consumidores.
+Con el procesamiento adecuado de los datos permitiría que las empresas
+optimicen sus procesos y mejoren la gestión de su cadena de suministros
+para obtener una ventaja competitiva en el mercado.
+
+\begin{itemize}
+\tightlist
+\item
+  Chen, D. Q., Preston, D. S., \& Swink, M. (2015). How the use of big
+  data analytics affects value creation in supply chain management.
+  Journal of management information systems, 32(4), 4-39.
+\end{itemize}
+
+En este artículo se realizó un estudio en diferentes empresas de Estados
+Unidos que muestran el impacto que tienen el análisis del Big Data en la
+creación de valor en la cadena de suministros, ya que se busca explotar
+de manera más efectiva los datos recopilados dentro de sus empresas por
+que esos datos se pueden transformar en conocimiento para generar un
+impacto en la toma de decisiones y contribuir en el crecimiento
+empresarial.
+
+El tema central de este artículo es la descripción del proceso de usar
+tecnologías avanzadas para examinar Big Data con el fin de descubrir
+información útil para ayudar a mejorar las decisiones a través de
+procesos de negocio. Los datos transformados tienen el potencial de
+cambiar las estrategias comerciales para mejorar el marketing y
+desarrollo de productos enfocados más específicamente a las necesidades
+de los clientes. En el estudio se pudo notar que la mayoría de las
+empresas aún no han comenzado a sacar el máximo provecho al análisis de
+Big Data.
+
+\hypertarget{autores-muxe1s-destacados}{%
+\subsection{Autores más Destacados}\label{autores-muxe1s-destacados}}
+
+\begin{itemize}
+\item
+  Abbasi, A, Sarker, S, \& Chiang, RHL (2016). Big data research in
+  information systems: Toward an inclusive research agenda. Journal of
+  the association for \ldots, aisel.aisnet.org Los autores resaltan la
+  importancia que el Big Data ha ido teniendo en los últimos años y el
+  impacto en la cadena de valor de la información en las personas,
+  procesos y tecnologías. Para esto es fundamental la capacidad de
+  analizar e interpretar los resultados de los grandes datasets.
+\item
+  Lee, D, Hosanagar, K, \& Nair, HS (2018). Advertising content and
+  consumer engagement on social media: Evidence from Facebook.
+  Management Science, pubsonline.informs.org. Estos autores han
+  realizado un estudio utilizando datos de Facebook que compiló
+  información sobre la interacción que tenían los clientes con esta
+  plataforma cuando veían la publicidad de diferentes empresas como ser
+  Amazon, Mechanical Trucks y otros y así analizar los diferentes tipos
+  de comportamiento que presentan los clientes a cada tipo de
+  publicación.
+\item
+  Büyüközkan, G, \& Göçer, F (2018). Digital Supply Chain: Literature
+  review and a proposed framework for future research. Computers in
+  Industry, Elsevier. Ambos autores han realizado un compilado de
+  fuentes bibliográficas para estudiar una Cadena de Suministros
+  Digital, ya que podría ofrecer grandes oportunidades a todos los
+  actores de la Cadena de Suministros a través de tecnología innovadora,
+  manejo de datos en la nube, internet de las cosas y otros.
+\item
+  Mithas, S, Ramasubbu, N, \& Sambamurthy, V (2011). How information
+  management capability influences firm performance. MIS quarterly,
+  JSTOR. Los autores de este articulo realizan un estudio para
+  determinar la relación entre las capacidades de tecnología de la
+  información y el desempeño de una empresa. Para esto utilizan un
+  dataset de un grupo empresarial que mide las capacidades de gestión de
+  clientes, gestión de procesos y gestión de rendimientos.
+\item
+  Yoo, KH, \& Gretzel, U (2011). Influence of personality on
+  travel-related consumer-generated media creation. Computers in human
+  behavior, Elsevier. Los autores realizaron un estudio en el que
+  encontraron que la personalidad de un cliente es un rasgo
+  particularmente influyente en su comportamiento. Para este estudio se
+  analizaron factores de comportamiento en viajeros que utilizaban los
+  medios digitales para planificar sus viajes, donde algunos tenían un
+  compromiso con la empresa en crear contenido digital y otros no lo
+  hacían ya sea por falta de tiempo o interés.
+\end{itemize}
+
+\hypertarget{justificaciuxf3n}{%
+\subsection{Justificación}\label{justificaciuxf3n}}
+
+El Análisis de Personalidad de los Clientes es un análisis detallado de
+los clientes ideales de cualquier empresa y les ayuda a entender mejor a
+sus clientes de acuerdo a cada tipo de comportamiento y también pueden
+modificar sus productos en base a las necesidades de sus diferentes
+tipos de clientes. Es por este motivo que se eligió este tema de estudio
+ya que puede contribuir a cualquier empresa a estimar el comportamiento
+que van a tener sus clientes en base a su personalidad, por ejemplo para
+el lanzamiento de un nuevo producto al mercado, en lugar de gastar
+recursos para comercializar el producto para distintos clientes, con
+este análisis se podría estudiar al segmento de clientes más probable
+que podría comprar el nuevo producto y luego comercializarlo a ese
+determinado segmento potencial.
+
+\hypertarget{materiales-y-muxe9todos}{%
+\section{Materiales y Métodos}\label{materiales-y-muxe9todos}}
+
+\hypertarget{materiales}{%
+\subsection{Materiales}\label{materiales}}
+
+El dataset para realizar este trabajo fue proporcionado por el Dr.~Omar
+Romero-Hernandez a través de la página:
+\url{https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis?resource=download}
+Este dataset consta de 29 variables (columnas) y 2240 observaciones
+(filas). Las variables a estudiar son: - Información al cliente
+Year\_Birth: año de nacimiento del cliente Education: nivel de educación
+del cliente Marital\_Status: estado civil del cliente Ingresos: ingresos
+familiares anuales del cliente Kidhome: Número de niños en el hogar del
+cliente Teenhome: Número de adolescentes en el hogar del cliente -
+Cantidad gastada en cada categoría MntWines: Cantidad gastada en vino en
+los últimos 2 años MntFruits: Cantidad gastada en frutas en los últimos
+2 años MntMeatProducts: cantidad gastada en carne en los últimos 2 años
+MntFishProducts: cantidad gastada en pescado en los últimos 2 años
+MntSweetProducts: cantidad gastada en dulces en los últimos 2 años
+MntGoldProds: cantidad gastada en oro en los últimos 2 años
+
+Además para elaborar este modelo se utilizará el método de normalización
+que consiste en el proceso por él que se normalizan todos los datos de
+entrada, es decir, se reducen a los rangos {[}0,1{]}. Si no se realiza
+la normalización los datos de entrada tendrán un efecto adicional sobre
+la neurona, dando lugar a decisiones incorrectas.
+
+Para normalizar los datos en R, se puede utilizar la siguiente función:
+
+normalize\textless-function(x)\{ return ( (x-min(x))/(max(x)-min(x))) \}
+Startups\_norm\textless-as.data.frame(lapply(Categoric,FUN=normalize))
+
+\hypertarget{muxe9todos}{%
+\subsection{Métodos}\label{muxe9todos}}
+
+Par analizar el dataset que tenemos aqui existen diferentes tipos de
+métodos basados en Inteligencia Artificial como ser las Redes
+Neuronales, kNN, árboles de decisión y otros, pero considerando la
+estructura del dataset obtenido se opta por utilizar el método de
+Entrenamiento de Redes Neuronales.
+
+Según el autor Izaurieta, F., \& Saavedra, C. (2000). Redes Neuronales
+Artificiales. Departamento de Física, Universidad de Concepción Chile,
+define a las Redes Neuronales Artificiales como una tecnología para
+minería de datos, puesto que ofrece los medios para modelar de manera
+efectiva y eficiente problemas grandes y complejos. Los modelos de Redes
+Neuronales son dirigidos a partir de los datos, es decir, son capaces de
+encontrar relaciones (patrones) de forma inductiva por medio de los
+algoritmos de aprendizaje basado en los datos existentes más que
+requerir la ayuda de un modelador para especificar la forma funcional y
+sus interacciones.
+
+Las Redes Neuronales son un método de resolver problemas, de forma
+individual o combinadas con otros métodos, para aquellas tareas de
+clasificación, identificación, diagnóstico, optimización o predicción en
+las que el balance datos/conocimiento se inclina hacia los datos y
+donde, adicionalmente, puede haber la necesidad de aprendizaje en tiempo
+de ejecución y de cierta tolerancia a fallos.
+
+La unidad de una red neuronal artificial es un procesador elemental
+llamado neurona que posee la capacidad limitada de calcular, en general,
+una suma ponderada de sus entradas y luego le aplica una función de
+activación para obtener una señal que será transmitida a la próxima
+neurona. Estas neuronas artificiales se agrupan en capas o niveles y
+poseen un alto grado de conectividad entre ellas.
+
+El aprendizaje involucra un ajuste de los pesos comparando la salida
+deseada con la respuesta de la red de manera que el error sea mínimo.
+
+\hypertarget{caso-de-estudio}{%
+\section{Caso de Estudio}\label{caso-de-estudio}}
+
+El objetivo del presente trabajo es predecir la cantidad gastada en
+diferentes categorías de productos según la información general del
+dataset. Pero por fines prácticos, solo se realizará el modelo para
+predecir la cantidad de vino que gastarian los clientes.
+
+Para esto comenzaremos con la recuperación del dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\NormalTok{dataset }\OtherTok{\textless{}{-}} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{"C:/Users/DELL/Desktop/Diplomado/Trabajo Final/Customer Dataset.csv"}\NormalTok{, }
+    \AttributeTok{delim =} \StringTok{"}\SpecialCharTok{\textbackslash{}t}\StringTok{"}\NormalTok{, }\AttributeTok{escape\_double =} \ConstantTok{FALSE}\NormalTok{, }
+    \AttributeTok{col\_types =} \FunctionTok{cols}\NormalTok{(}\AttributeTok{Education =} \FunctionTok{col\_factor}\NormalTok{(}\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"2n Cycle"}\NormalTok{, }
+        \StringTok{"Basic"}\NormalTok{, }\StringTok{"Graduation"}\NormalTok{, }\StringTok{"Master"}\NormalTok{, }
+        \StringTok{"PhD"}\NormalTok{)), }\AttributeTok{Marital\_Status =} \FunctionTok{col\_factor}\NormalTok{(}\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Married"}\NormalTok{, }
+        \StringTok{"Together"}\NormalTok{, }\StringTok{"Single"}\NormalTok{, }\StringTok{"Widow"}\NormalTok{, }\StringTok{"Divorced"}\NormalTok{, }
+        \StringTok{"Alone"}\NormalTok{, }\StringTok{"Absurd"}\NormalTok{, }\StringTok{"YOLO"}\NormalTok{))), }\AttributeTok{trim\_ws =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Para la realización de este modelo, vamos a utilizar las siguientes
+librerias:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(neuralnet)}
+\FunctionTok{library}\NormalTok{(nnet) }
+\FunctionTok{library}\NormalTok{(NeuralNetTools)}
+\FunctionTok{library}\NormalTok{(plyr)}
+\end{Highlighting}
+\end{Shaded}
+
+Para iniciar con el tratamiento de los datos, se realizará
+modificaciones al dataset:
+
+Vamos a crear una nueva variable, para calcular la edad
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Age }\OtherTok{\textless{}{-}} \DecValTok{2023} \SpecialCharTok{{-}}\NormalTok{ dataset}\SpecialCharTok{$}\NormalTok{Year\_Birth}
+\NormalTok{dataset }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(dataset,Age) }
+\end{Highlighting}
+\end{Shaded}
+
+Las Variables que utilizaremos para realizar este trabajo son:
+
+\begin{itemize}
+\tightlist
+\item
+  Education
+\item
+  Marital\_Status
+\item
+  Kidhome
+\item
+  Teenhome
+\item
+  Income
+\item
+  Age
+\end{itemize}
+
+Eliminamos las columnas que no vamos a utilizar
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset }\OtherTok{\textless{}{-}}\NormalTok{ dataset[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{( }\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{ , }\DecValTok{8}\SpecialCharTok{:}\DecValTok{9}\NormalTok{ , }\DecValTok{11}\SpecialCharTok{:}\DecValTok{29}\NormalTok{ )]}
+\end{Highlighting}
+\end{Shaded}
+
+Tambien eliminaremos las filas que tienen datos en blanco
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset }\OtherTok{\textless{}{-}}\NormalTok{ dataset[}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Income)),]}
+\NormalTok{dataset }\OtherTok{\textless{}{-}}\NormalTok{ dataset[}\SpecialCharTok{!}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Income}\SpecialCharTok{\textgreater{}}\DecValTok{150000}\NormalTok{ ),]}
+\end{Highlighting}
+\end{Shaded}
+
+Ahora un resumen de las variables que analizaremos para elaborar el
+modelo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(dataset)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Education     Marital_Status     Income          Kidhome     
+##  2n Cycle  : 200   Married :854    Min.   :  1730   Min.   :0.000  
+##  Basic     :  54   Together:569    1st Qu.: 35196   1st Qu.:0.000  
+##  Graduation:1113   Single  :471    Median : 51301   Median :0.000  
+##  Master    : 364   Divorced:231    Mean   : 51634   Mean   :0.442  
+##  PhD       : 477   Widow   : 76    3rd Qu.: 68290   3rd Qu.:1.000  
+##                    Alone   :  3    Max.   :113734   Max.   :2.000  
+##                    (Other) :  4                                    
+##     Teenhome         MntWines           Age        
+##  Min.   :0.0000   Min.   :   0.0   Min.   : 27.00  
+##  1st Qu.:0.0000   1st Qu.:  24.0   1st Qu.: 46.00  
+##  Median :0.0000   Median : 177.5   Median : 53.00  
+##  Mean   :0.5063   Mean   : 306.1   Mean   : 54.19  
+##  3rd Qu.:1.0000   3rd Qu.: 507.0   3rd Qu.: 64.00  
+##  Max.   :2.0000   Max.   :1493.0   Max.   :130.00  
+## 
+\end{verbatim}
+
+Ahora procedemos con la elaboración de los histogramas
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{100}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Income, }\AttributeTok{xlab =} \StringTok{"Ingresos"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Histograma de los Ingresos"}\NormalTok{, }\AttributeTok{col =} \StringTok{"lightgreen"}\NormalTok{, }\AttributeTok{breaks =} \DecValTok{10}\NormalTok{, }\AttributeTok{labels =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{100}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Age, }\AttributeTok{xlab =} \StringTok{"Edades"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Histograma de las edades de los clientes"}\NormalTok{, }\AttributeTok{col =} \StringTok{"deepskyblue"}\NormalTok{, }\AttributeTok{breaks =} \DecValTok{10}\NormalTok{, }\AttributeTok{labels =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{100}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{MntWines, }\AttributeTok{xlab =} \StringTok{"Monto Gastado en Vinos"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Histograma de la Cantidad que se gasta en Vinos"}\NormalTok{, }\AttributeTok{col =} \StringTok{"indianred2"}\NormalTok{, }\AttributeTok{breaks =} \DecValTok{10}\NormalTok{, }\AttributeTok{labels =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+Ahora vamos a analizar si existe alguna relación entre las variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pairs}\NormalTok{(dataset[ ,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+Un análisis de los ingresos
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(dataset[ ,}\DecValTok{3}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+Vamos a convertir las categorias de Education y Marital Status en
+valores numéricos
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset}\SpecialCharTok{$}\NormalTok{Marital\_Status }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{revalue}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Marital\_Status, }\FunctionTok{c}\NormalTok{(}\StringTok{"Married"}\OtherTok{=}\StringTok{"0"}\NormalTok{, }\StringTok{"Together"}\OtherTok{=}\StringTok{"1"}\NormalTok{, }\StringTok{"Single"}\OtherTok{=}\StringTok{"2"}\NormalTok{, }\StringTok{"Divorced"}\OtherTok{=}\StringTok{"3"}\NormalTok{, }\StringTok{"Widow"}\OtherTok{=}\StringTok{"4"}\NormalTok{, }\StringTok{"Alone"}\OtherTok{=}\StringTok{"5"}\NormalTok{, }\StringTok{"Absurd"}\OtherTok{=}\StringTok{"6"}\NormalTok{, }\StringTok{"YOLO"}\OtherTok{=}\StringTok{"7"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset}\SpecialCharTok{$}\NormalTok{Education }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{revalue}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{Education, }\FunctionTok{c}\NormalTok{(}\StringTok{"Graduation"}\OtherTok{=}\StringTok{"0"}\NormalTok{, }\StringTok{"PhD"}\OtherTok{=}\StringTok{"1"}\NormalTok{, }\StringTok{"Master"}\OtherTok{=}\StringTok{"2"}\NormalTok{, }\StringTok{"2n Cycle"}\OtherTok{=}\StringTok{"3"}\NormalTok{, }\StringTok{"Basic"}\OtherTok{=}\StringTok{"4"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+Ahora visualizamos la tabla obtenida
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(dataset), }\StringTok{"simple"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}rrrrrrr@{}}
+\toprule()
+Education & Marital\_Status & Income & Kidhome & Teenhome & MntWines &
+Age \\
+\midrule()
+\endhead
+3 & 3 & 58138 & 0 & 0 & 635 & 66 \\
+3 & 3 & 46344 & 1 & 1 & 11 & 69 \\
+3 & 2 & 71613 & 0 & 0 & 426 & 58 \\
+3 & 2 & 26646 & 1 & 0 & 11 & 39 \\
+5 & 1 & 58293 & 1 & 0 & 173 & 42 \\
+4 & 2 & 62513 & 0 & 1 & 520 & 56 \\
+\bottomrule()
+\end{longtable}
+
+Normalizamos los valores de la cantidad que se gasta en vinos
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normalize}\OtherTok{\textless{}{-}}\ControlFlowTok{function}\NormalTok{(x)\{}
+  \FunctionTok{return}\NormalTok{ ( (x}\SpecialCharTok{{-}}\FunctionTok{min}\NormalTok{(x))}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{max}\NormalTok{(x)}\SpecialCharTok{{-}}\FunctionTok{min}\NormalTok{(x)))}
+\NormalTok{\}}
+
+\NormalTok{dataset\_norm}\OtherTok{\textless{}{-}}\FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(dataset,}\AttributeTok{FUN=}\NormalTok{normalize))}
+\FunctionTok{summary}\NormalTok{(dataset\_norm}\SpecialCharTok{$}\NormalTok{MntWines)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## 0.00000 0.01607 0.11889 0.20502 0.33958 1.00000
+\end{verbatim}
+
+Datos Originales
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{MntWines)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 635  11 426  11 173 520
+\end{verbatim}
+
+Datos Normalizados
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dataset\_norm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Education Marital_Status    Income Kidhome Teenhome    MntWines       Age
+## 1      0.50      0.2857143 0.5036249     0.0      0.0 0.425318151 0.3786408
+## 2      0.50      0.2857143 0.3983251     0.5      0.5 0.007367716 0.4077670
+## 3      0.50      0.1428571 0.6239331     0.0      0.0 0.285331547 0.3009709
+## 4      0.50      0.1428571 0.2224563     0.5      0.0 0.007367716 0.1165049
+## 5      1.00      0.0000000 0.5050087     0.5      0.0 0.115874079 0.1456311
+## 6      0.75      0.1428571 0.5426860     0.0      0.5 0.348292029 0.2815534
+\end{verbatim}
+
+Muestreo para Entrenamiento
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{indice }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FunctionTok{nrow}\NormalTok{(dataset\_norm), }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{,}\FloatTok{0.3}\NormalTok{))}
+\NormalTok{dataset\_train }\OtherTok{\textless{}{-}}\NormalTok{ dataset\_norm[indice}\SpecialCharTok{==}\DecValTok{1}\NormalTok{,]}
+\NormalTok{dataset\_test  }\OtherTok{\textless{}{-}}\NormalTok{ dataset\_norm[indice}\SpecialCharTok{==}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+El Modelo de la Red Neuronal
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(neuralnet)}
+\FunctionTok{attach}\NormalTok{(dataset)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The following object is masked _by_ .GlobalEnv:
+## 
+##     Age
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset\_model }\OtherTok{\textless{}{-}} \FunctionTok{neuralnet}\NormalTok{(MntWines }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Education }\SpecialCharTok{+}\NormalTok{ Marital\_Status }\SpecialCharTok{+}\NormalTok{ Income }\SpecialCharTok{+}\NormalTok{ Kidhome }\SpecialCharTok{+}\NormalTok{ Teenhome }\SpecialCharTok{+}\NormalTok{ Age, }\AttributeTok{data =}\NormalTok{ dataset\_train)}
+
+\FunctionTok{str}\NormalTok{(dataset\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 14
+##  $ call               : language neuralnet(formula = MntWines ~ Education + Marital_Status + Income + Kidhome +      Teenhome + Age, data = dataset_train)
+##  $ response           : num [1:1544, 1] 0.42532 0.00737 0.00737 0.11587 0.1574 ...
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:1544] "1" "2" "4" "5" ...
+##   .. ..$ : chr "MntWines"
+##  $ covariate          : num [1:1544, 1:6] 0.5 0.5 0.5 1 0.5 1 1 0.25 0.5 0.75 ...
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:1544] "1" "2" "4" "5" ...
+##   .. ..$ : chr [1:6] "Education" "Marital_Status" "Income" "Kidhome" ...
+##  $ model.list         :List of 2
+##   ..$ response : chr "MntWines"
+##   ..$ variables: chr [1:6] "Education" "Marital_Status" "Income" "Kidhome" ...
+##  $ err.fct            :function (x, y)  
+##   ..- attr(*, "type")= chr "sse"
+##  $ act.fct            :function (x)  
+##   ..- attr(*, "type")= chr "logistic"
+##  $ linear.output      : logi TRUE
+##  $ data               :'data.frame': 1544 obs. of  7 variables:
+##   ..$ Education     : num [1:1544] 0.5 0.5 0.5 1 0.5 1 1 0.25 0.5 0.75 ...
+##   ..$ Marital_Status: num [1:1544] 0.286 0.286 0.143 0 0.571 ...
+##   ..$ Income        : num [1:1544] 0.504 0.398 0.222 0.505 0.481 ...
+##   ..$ Kidhome       : num [1:1544] 0 0.5 0.5 0.5 0 0.5 0.5 0 0 0.5 ...
+##   ..$ Teenhome      : num [1:1544] 0 0.5 0 0 0.5 0 0.5 0 0 0.5 ...
+##   ..$ MntWines      : num [1:1544] 0.42532 0.00737 0.00737 0.11587 0.1574 ...
+##   ..$ Age           : num [1:1544] 0.379 0.408 0.117 0.146 0.243 ...
+##  $ exclude            : NULL
+##  $ net.result         :List of 1
+##   ..$ : num [1:1544, 1] 0.2347 0.0668 0.0093 0.2372 0.2418 ...
+##   .. ..- attr(*, "dimnames")=List of 2
+##   .. .. ..$ : chr [1:1544] "1" "2" "4" "5" ...
+##   .. .. ..$ : NULL
+##  $ weights            :List of 1
+##   ..$ :List of 2
+##   .. ..$ : num [1:7, 1] 5.31 -1.217 -0.293 -9.219 1.37 ...
+##   .. ..$ : num [1:2, 1] 0.546 -0.555
+##  $ generalized.weights:List of 1
+##   ..$ : num [1:1544, 1:6] 0.926 1.278 2.339 0.921 0.912 ...
+##   .. ..- attr(*, "dimnames")=List of 2
+##   .. .. ..$ : chr [1:1544] "1" "2" "4" "5" ...
+##   .. .. ..$ : NULL
+##  $ startweights       :List of 1
+##   ..$ :List of 2
+##   .. ..$ : num [1:7, 1] -1.616 -1.258 0.644 0.325 1.498 ...
+##   .. ..$ : num [1:2, 1] 0.865 -0.358
+##  $ result.matrix      : num [1:12, 1] 15.09987 0.00977 2976 5.31038 -1.21661 ...
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:12] "error" "reached.threshold" "steps" "Intercept.to.1layhid1" ...
+##   .. ..$ : NULL
+##  - attr(*, "class")= chr "nn"
+\end{verbatim}
+
+Ploteo de la Red Neuronal
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(dataset\_model, }\AttributeTok{rep =} \StringTok{"best"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+Evaluamos de la performance de nuestro modelo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_results }\OtherTok{\textless{}{-}} \FunctionTok{compute}\NormalTok{(dataset\_model,dataset\_test[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{])}
+\NormalTok{predicted\_MntWines }\OtherTok{\textless{}{-}}\NormalTok{ model\_results}\SpecialCharTok{$}\NormalTok{net.result}
+\end{Highlighting}
+\end{Shaded}
+
+Monto Gastado en Vino Pronósticado Vs. Monto Gastado en Vino Actual en
+el dataset
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(predicted\_MntWines,dataset\_test}\SpecialCharTok{$}\NormalTok{MntWines)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           [,1]
+## [1,] 0.7152518
+\end{verbatim}
+
+Desnormalizando los resultados
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{str\_max }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{MntWines) }
+\NormalTok{str\_min }\OtherTok{\textless{}{-}} \FunctionTok{min}\NormalTok{(dataset}\SpecialCharTok{$}\NormalTok{MntWines)}
+
+\NormalTok{unnormalize }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x, min, max) \{ }
+  \FunctionTok{return}\NormalTok{( (max }\SpecialCharTok{{-}}\NormalTok{ min)}\SpecialCharTok{*}\NormalTok{x }\SpecialCharTok{+}\NormalTok{ min )}
+\NormalTok{\}}
+
+\NormalTok{ActualMntWines\_pred }\OtherTok{\textless{}{-}} \FunctionTok{unnormalize}\NormalTok{(predicted\_MntWines,str\_min,str\_max)}
+\FunctionTok{head}\NormalTok{(ActualMntWines\_pred)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         [,1]
+## 3  573.83235
+## 6  497.83715
+## 9   56.21725
+## 15 731.39021
+## 17 110.83613
+## 18 650.37104
+\end{verbatim}
+
+Ahora mejoraremos el desempeño de nuestro modelo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataset\_model2 }\OtherTok{\textless{}{-}} \FunctionTok{neuralnet}\NormalTok{(MntWines }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Education }\SpecialCharTok{+}\NormalTok{ Marital\_Status }\SpecialCharTok{+}\NormalTok{ Income }\SpecialCharTok{+}\NormalTok{ Kidhome }\SpecialCharTok{+}\NormalTok{ Teenhome }\SpecialCharTok{+}\NormalTok{ Age , }\AttributeTok{data =}\NormalTok{ dataset\_train, }\AttributeTok{hidden =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(dataset\_model2 ,}\AttributeTok{rep =} \StringTok{"best"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Final-Trabajo_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+Performance de nuestro modelo mejorado
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_results2 }\OtherTok{\textless{}{-}} \FunctionTok{compute}\NormalTok{(dataset\_model2,dataset\_test[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{])}
+\NormalTok{predicted\_Mntwines2}\OtherTok{\textless{}{-}}\NormalTok{model\_results2}\SpecialCharTok{$}\NormalTok{net.result}
+\FunctionTok{cor}\NormalTok{(predicted\_Mntwines2,dataset\_test}\SpecialCharTok{$}\NormalTok{MntWines)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           [,1]
+## [1,] 0.7347892
+\end{verbatim}
+
+\hypertarget{interpretaciuxf3n-de-resultados-y-conclusiones}{%
+\section{Interpretación de Resultados y
+Conclusiones}\label{interpretaciuxf3n-de-resultados-y-conclusiones}}
+
+Los coeficientes obtenidos en la gráfica de la red neuronal nos indica
+el factor por el cual debe considerarse cada variable, para obtener la
+cantidad de dinero que gasta un cliente en el consumo de vinos, pero
+también este mismo modelo se puede aplicar para cualquier categoría que
+se quiera estudiar como ser las otras cantidades de consumo de los otros
+productos. Sin embargo, este modelo necesita ser mejorado todavía ya que
+tiene un error cerca del 13\% y se debería tratar de reducir este error
+al mínimo posible.
+
+En conclusión, el modelo de red neuronal propuesto fue capaz de analizar
+información clave sobre los clientes a partir de datos básicos como ser
+sus ingresos, edad, familia y otros para predecir que cantidad de dinero
+pueden llegar a gastar en vinos y esto representa una herramienta útil
+para que las empresas puedan realizar el Análisis de Personalidad de los
+Clientes y adaptar esta información a su cadena de suministros, y esto
+puede llegar a generar mejores resultados para cualquier empresa.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{6pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+
+% Only for the journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following supporting information can be downloaded at: \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title. A supporting video article is available at doi: link.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+
+%% Only for journal Encyclopedia
+
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+
+\noindent
+\begin{tabular}{@{}ll}
+MDPI & Multidisciplinary Digital Publishing Institute \\
+DOAJ & Directory of open access journals \\
+TLA & Three letter acronym \\
+LD & linear dichroism \\
+\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+\input{"appendix.tex"}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{adjustwidth}{-\extralength}{0cm}
+
+%\printendnotes[custom] % Un-comment to print a list of endnotes
+
+
+\reftitle{References}
+\bibliography{mybibfile.bib}
+
+% If authors have biography, please use the format below
+%\section*{Short Biography of Authors}
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author1.pdf}}}
+%{\textbf{Firstname Lastname} Biography of first author}
+%
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author2.jpg}}}
+%{\textbf{Firstname Lastname} Biography of second author}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for journal Sci
+%\reviewreports{\\
+%Reviewer 1 comments and authors’ response\\
+%Reviewer 2 comments and authors’ response\\
+%Reviewer 3 comments and authors’ response
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PublishersNote{}
+\end{adjustwidth}
+
+
+\end{document}

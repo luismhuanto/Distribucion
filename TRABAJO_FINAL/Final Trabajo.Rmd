@@ -1,0 +1,366 @@
+---
+title: Análisis de Personalidad de los Clientes
+author:
+  - name: Luis Fernando Mamani Huanto
+    affil: 1,2,\ddagger,*
+    orcid: 
+  - num: 1
+    address: |
+      Universidad Católica Boliviana
+      Ingeniería Industrial
+      Av. 14 de Septiembre Nº 4807 La Paz, Bolivia
+    email: luismhuanto@gmail.com
+# author citation list in chicago format
+authorcitation: |
+  Leutnant, D.; Doe, J.
+# firstnote to eighthnote
+firstnote: |
+  Current address: Updated affiliation
+secondnote: |
+  These authors contributed equally to this work.
+correspondence: |
+  luismhuanto@gmail.com; Tel.: +591-765-21-257
+# document options
+journal: Iberoamerican Journal of Industrial Engineering
+type: article
+status: submit
+# front matter
+abstract: |
+  El presente trabajo consiste en la elaboración de un modelo de una red neuronal artificial para analizar la personalidad de los clientes y la relación que existe con la cadena de suministros. El modelo utiliza lenguaje de programación en R y técnicas de procesamiento para identificar los patrones de comportamiento de los clientes. Los resultados de este modelo nos muestran que este modelo de red neuronal puede predecirla cantidad que van a gastar en determinado producto en base los datos de su educación, estado civil, cantidad de niños y jóvenes que viven con ellos, sus ingresos y su edad, con esta información se puede obtener una mejor adaptación de la oferta a la demanda, y esto mejoraría la satisfacción de los clientes y la eficiencia de la cadena de suministros.
+# back matter
+keywords: |
+  Customer; Personality; Spend; Supply Chain; Dataset
+
+abbreviations:
+  - short: MDPI
+    long: Multidisciplinary Digital Publishing Institute
+  - short: DOAJ
+    long: Directory of open access journals
+  - short: TLA
+    long: Three letter acronym
+  - short: LD 
+    long: linear dichroism
+bibliography: mybibfile.bib
+appendix: appendix.tex
+endnotes: false
+output: 
+  rticles::mdpi_article:
+    extra_dependencies: longtable
+---
+
+# Introducción
+
+El Análisis de Personalidad de los Clientes es una herramienta valiosa para comprender el comportamiento de compra y preferencias de los clientes. La personalidad de un individuo influye en sus decisiones de compra y puede ser un factor clave en la elección de productos y marcas. En este sentido, las empresas tienen grandes cantidades de datos sobre sus clientes, y con el tratamiento y análisis correcto de esos datos se puede obtener información muy valiosa que se puede utilizar para desarrollar estrategias de marketing efectivas y adaptar sus productos y servicios a las necesidades y deseos de sus clientes.
+
+Por otro lado, la Cadena de Suministros es un proceso muy importante en cualquier empresa, que implica la gestión de la cadena de abastecimiento de materias primas, productos y servicios, desde la recepción de materias primas hasta la entrega final al consumidor. La eficiencia de la cadena de suministros es fundamental para garantizar la satisfacción del cliente y el éxito de la empresa.
+
+Ambos conceptos, el Análisis de Personalidad de los Clientes y la Cadena de Suministros, están interrelacionados. Las empresas pueden utilizar el Análisis de Personalidad de los Clientes para adaptar su Cadena de Suministros y garantizar que los productos y servicios estén disponibles donde y cuando los clientes los necesiten. Por lo tanto, comprender la personalidad de los consumidores y la cadena de suministros son factores críticos para el éxito de cualquier empresa.
+
+
+## Estado del Arte
+
+Realizamos una búsqueda en Google Académico con las siguientes palabras clave:
+
+* Customer
+* Personality
+* Spend
+* Supply Chain
+* Dataset
+
+El resultado nos dio 22800 artículos.
+
+De la revisión, se seleccionaron los articulos más interesantes:
+
+* Woodcock, N., Green, A., Starkey, M., & Customer Framework™. (2011). Social CRM as a business strategy. Journal of Database Marketing & Customer Strategy Management, 18, 50-64.
+
+Este artículo trata sobre la Gestión de Relaciones Sociales con los Clientes (SCRM) la cual es una estrategia comercial de involucrar a los clientes a través de las redes sociales con el objetivo de generar confianza y lealtad hacia la marca, además del impacto que puede llegar a tener en cualquier empresa. Con el pasar de los años las empresas han buscado captar más clientes a través de la publicidad mediante los medios de comunicación, pero en los tiempos actuales los clientes confían más en las opiniones o experiencias de sus amigos o colegas mediante las redes sociales. 
+
+El tema central de este artículo es describir el poder de participación del cliente, esto podría lograrse mediante las relaciones entre las empresas y los mayoristas combinando su conocimiento de las actitudes y comportamientos de los clientes para ofrecer una mejor experiencia de compra. Es por esta razón que se debe analizar el comportamiento y la personalidad de los clientes. Mientras más alto sea el compromiso del cliente, mayor será el beneficio para la empresa. Ya que un cliente comprometido con una empresa tiene entre 5 y 8 veces más valor que un consumidor promedio. Este compromiso es difícil de lograr, pero debe ganarse a través de buenos precios y promociones. 
+
+* Grover, P., & Kar, A. K. (2017). Big data analytics: A review on theoretical contributions and tools used in literature. Global Journal of Flexible Systems Management, 18, 203-229.
+
+Este articulo describe los beneficios de un análisis con Big Data, y esos datos se podrían usar para tomar mejores decisiones, para estimar las condiciones del mercado, conocer el comportamiento del cliente, tendencias y patrones. También estos datos se podrían utilizar para realizar los pronósticos de ventas, optimización de precios de productos, optimización de la demanda y para mejorar la satisfacción del cliente.
+
+El principal tema de este articulo trata sobre el uso del análisis del Big Data en varias industrias, y como está ayudando a administrar de mejor manera sus recursos, ya que este análisis permite una gestión flexible de los activos de información en las organizaciones y también nos permite monitorear la evolución de los gustos de los consumidores. Con el procesamiento adecuado de los datos permitiría que las empresas optimicen sus procesos y mejoren la gestión de su cadena de suministros para obtener una ventaja competitiva en el mercado.
+
+* Chen, D. Q., Preston, D. S., & Swink, M. (2015). How the use of big data analytics affects value creation in supply chain management. Journal of management information systems, 32(4), 4-39.
+
+En este artículo se realizó un estudio en diferentes empresas de Estados Unidos que muestran el impacto que tienen el análisis del Big Data en la creación de valor en la cadena de suministros, ya que se busca explotar de manera más efectiva los datos recopilados dentro de sus empresas por que esos datos se pueden transformar en conocimiento para generar un impacto en la toma de decisiones y contribuir en el crecimiento empresarial.
+
+El tema central de este artículo es la descripción del proceso de usar tecnologías avanzadas para examinar Big Data con el fin de descubrir información útil para ayudar a mejorar las decisiones a través de procesos de negocio. Los datos transformados tienen el potencial de cambiar las estrategias comerciales para mejorar el marketing y desarrollo de productos enfocados más específicamente a las necesidades de los clientes. En el estudio se pudo notar que la mayoría de las empresas aún no han comenzado a sacar el máximo provecho al análisis de Big Data.
+
+
+## Autores más Destacados
+
+- Abbasi, A, Sarker, S, & Chiang, RHL (2016). Big data research in information systems: Toward an inclusive research agenda. Journal of the association for …, aisel.aisnet.org
+Los autores resaltan la importancia que el Big Data ha ido teniendo en los últimos años y el impacto en la cadena de valor de la información en las personas, procesos y tecnologías. Para esto es fundamental la capacidad de analizar e interpretar los resultados de los grandes datasets.  
+
+- Lee, D, Hosanagar, K, & Nair, HS (2018). Advertising content and consumer engagement on social media: Evidence from Facebook. Management Science, pubsonline.informs.org.
+Estos autores han realizado un estudio utilizando datos de Facebook que compiló información sobre la interacción que tenían los clientes con esta plataforma cuando veían la publicidad de diferentes empresas como ser Amazon, Mechanical Trucks y otros y así analizar los diferentes tipos de comportamiento que presentan los clientes a cada tipo de publicación. 
+
+- Büyüközkan, G, & Göçer, F (2018). Digital Supply Chain: Literature review and a proposed framework for future research. Computers in Industry, Elsevier.
+Ambos autores han realizado un compilado de fuentes bibliográficas para estudiar una Cadena de Suministros Digital, ya que podría ofrecer grandes oportunidades a todos los actores de la Cadena de Suministros a través de tecnología innovadora, manejo de datos en la nube, internet de las cosas y otros.
+
+- Mithas, S, Ramasubbu, N, & Sambamurthy, V (2011). How information management capability influences firm performance. MIS quarterly, JSTOR.
+Los autores de este articulo realizan un estudio para determinar la relación entre las capacidades de tecnología de la información y el desempeño de una empresa. Para esto utilizan un dataset de un grupo empresarial que mide las capacidades de gestión de clientes, gestión de procesos y gestión de rendimientos.
+
+- Yoo, KH, & Gretzel, U (2011). Influence of personality on travel-related consumer-generated media creation. Computers in human behavior, Elsevier.
+Los autores realizaron un estudio en el que encontraron que la personalidad de un cliente es un rasgo particularmente influyente en su comportamiento. Para este estudio se analizaron factores de comportamiento en viajeros que utilizaban los medios digitales para planificar sus viajes, donde algunos tenían un compromiso con la empresa en crear contenido digital y otros no lo hacían ya sea por falta de tiempo o interés. 
+
+## Justificación
+
+El Análisis de Personalidad de los Clientes es un análisis detallado de los clientes ideales de cualquier empresa y les ayuda a entender mejor a sus clientes de acuerdo a cada tipo de comportamiento y también pueden modificar sus productos en base a las necesidades de sus diferentes tipos de clientes.
+Es por este motivo que se eligió este tema de estudio ya que puede contribuir a cualquier empresa a estimar el comportamiento que van a tener sus clientes en base a su personalidad, por ejemplo para el lanzamiento de un nuevo producto al mercado, en lugar de gastar recursos para comercializar el producto para distintos clientes, con este análisis se podría estudiar al segmento de clientes más probable que podría comprar el nuevo producto y luego comercializarlo a ese determinado segmento potencial. 
+
+
+# Materiales y Métodos
+
+## Materiales 
+
+El dataset para realizar este trabajo fue proporcionado por el Dr. Omar Romero-Hernandez a través de la página: https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis?resource=download 
+Este dataset consta de 29 variables (columnas) y 2240 observaciones (filas).
+Las variables a estudiar son:
+- Información al cliente
+Year_Birth: año de nacimiento del cliente
+Education: nivel de educación del cliente
+Marital_Status: estado civil del cliente
+Ingresos: ingresos familiares anuales del cliente
+Kidhome: Número de niños en el hogar del cliente
+Teenhome: Número de adolescentes en el hogar del cliente
+- Cantidad gastada en cada categoría
+MntWines: Cantidad gastada en vino en los últimos 2 años
+MntFruits: Cantidad gastada en frutas en los últimos 2 años
+MntMeatProducts: cantidad gastada en carne en los últimos 2 años
+MntFishProducts: cantidad gastada en pescado en los últimos 2 años
+MntSweetProducts: cantidad gastada en dulces en los últimos 2 años
+MntGoldProds: cantidad gastada en oro en los últimos 2 años
+
+Además para elaborar este modelo se utilizará el método de normalización que consiste en el proceso por él que se normalizan todos los datos de entrada, es decir, se reducen a los rangos [0,1].  Si no se realiza la normalización los datos de entrada tendrán un efecto adicional sobre la neurona, dando lugar a decisiones incorrectas.
+
+Para normalizar los datos en R, se puede utilizar la siguiente función: 
+
+  normalize<-function(x){
+    return ( (x-min(x))/(max(x)-min(x)))
+  }
+  Startups_norm<-as.data.frame(lapply(Categoric,FUN=normalize))
+  
+
+## Métodos
+
+Par analizar el dataset que tenemos aqui existen diferentes tipos de métodos basados en Inteligencia Artificial como ser las Redes Neuronales, kNN, árboles de decisión y otros, pero considerando la estructura del dataset obtenido se opta por utilizar el método de Entrenamiento de Redes Neuronales.
+ 
+Según el autor Izaurieta, F., & Saavedra, C. (2000). Redes Neuronales Artificiales. Departamento de Física, Universidad de Concepción Chile, define a las Redes Neuronales Artificiales como una tecnología para minería de datos, puesto que ofrece los medios para modelar de manera efectiva y eficiente problemas grandes y complejos. Los modelos de Redes Neuronales son dirigidos a partir de los datos, es decir, son capaces de encontrar relaciones (patrones) de forma inductiva por medio de los algoritmos de aprendizaje basado en los datos existentes más que requerir la ayuda de un modelador para especificar la forma funcional y sus interacciones.
+
+Las Redes Neuronales son un método de resolver problemas, de forma individual o combinadas con otros métodos, para aquellas tareas de clasificación, identificación, diagnóstico, optimización o predicción en las que el balance datos/conocimiento se inclina hacia los datos y donde, adicionalmente, puede haber la necesidad de aprendizaje en tiempo de ejecución y de cierta tolerancia a fallos. 
+
+La unidad de una red neuronal artificial es un procesador elemental llamado neurona que posee la capacidad limitada de calcular, en general, una suma ponderada de sus entradas y luego le aplica una función de activación para obtener una señal que será transmitida a la próxima neurona. Estas neuronas artificiales se agrupan en capas o niveles y poseen un alto grado de conectividad entre ellas.
+
+El aprendizaje involucra un ajuste de los pesos comparando la salida deseada con la respuesta de la red de manera que el error sea mínimo.
+ 
+
+# Caso de Estudio
+
+El objetivo del presente trabajo es predecir la cantidad gastada en diferentes categorías de productos según la información general del dataset. Pero por fines prácticos, solo se realizará el modelo para predecir la cantidad de vino que gastarian los clientes.
+
+Para esto comenzaremos con la recuperación del dataset.
+
+```{r}
+library(readr)
+dataset <- read_delim("C:/Users/DELL/Desktop/Diplomado/Trabajo Final/Customer Dataset.csv", 
+    delim = "\t", escape_double = FALSE, 
+    col_types = cols(Education = col_factor(levels = c("2n Cycle", 
+        "Basic", "Graduation", "Master", 
+        "PhD")), Marital_Status = col_factor(levels = c("Married", 
+        "Together", "Single", "Widow", "Divorced", 
+        "Alone", "Absurd", "YOLO"))), trim_ws = TRUE)
+```
+
+Para la realización de este modelo, vamos a utilizar las siguientes librerias:
+
+```{r}
+library(neuralnet)
+library(nnet) 
+library(NeuralNetTools)
+library(plyr)
+```
+
+Para iniciar con el tratamiento de los datos, se realizará modificaciones al dataset:
+
+Vamos a crear una nueva variable, para calcular la edad
+
+```{r}
+Age <- 2023 - dataset$Year_Birth
+dataset <- cbind(dataset,Age) 
+```
+
+Las Variables que utilizaremos para realizar este trabajo son:
+
+- Education
+- Marital_Status
+- Kidhome
+- Teenhome
+- Income
+- Age
+
+Eliminamos las columnas que no vamos a utilizar
+
+```{r}
+dataset <- dataset[-c( 1:2 , 8:9 , 11:29 )]
+```
+
+Tambien eliminaremos las filas que tienen datos en blanco
+
+```{r}
+dataset <- dataset[!(is.na(dataset$Income)),]
+dataset <- dataset[!(dataset$Income>150000 ),]
+```
+
+Ahora un resumen de las variables que analizaremos para elaborar el modelo
+
+```{r}
+summary(dataset)
+```
+
+Ahora procedemos con la elaboración de los histogramas
+
+```{r}
+options(scipen = 100)
+hist(dataset$Income, xlab = "Ingresos", ylab = "Frecuencia", main = "Histograma de los Ingresos", col = "lightgreen", breaks = 10, labels = TRUE)
+```
+
+```{r}
+options(scipen = 100)
+hist(dataset$Age, xlab = "Edades", ylab = "Frecuencia", main = "Histograma de las edades de los clientes", col = "deepskyblue", breaks = 10, labels = TRUE)
+```
+
+
+```{r}
+options(scipen = 100)
+hist(dataset$MntWines, xlab = "Monto Gastado en Vinos", ylab = "Frecuencia", main = "Histograma de la Cantidad que se gasta en Vinos", col = "indianred2", breaks = 10, labels = TRUE)
+```
+
+Ahora vamos a analizar si existe alguna relación entre las variables
+
+```{r}
+pairs(dataset[ ,1:5])
+```
+
+Un análisis de los ingresos
+```{r}
+boxplot(dataset[ ,3])
+```
+
+Vamos a convertir las categorias de Education y Marital Status en valores numéricos
+
+```{r}
+dataset$Marital_Status <- as.numeric(revalue(dataset$Marital_Status, c("Married"="0", "Together"="1", "Single"="2", "Divorced"="3", "Widow"="4", "Alone"="5", "Absurd"="6", "YOLO"="7")))
+```
+
+```{r}
+dataset$Education <- as.numeric(revalue(dataset$Education, c("Graduation"="0", "PhD"="1", "Master"="2", "2n Cycle"="3", "Basic"="4")))
+```
+
+Ahora visualizamos la tabla obtenida
+
+```{r}
+library(kableExtra)
+kable(head(dataset), "simple")
+```
+
+Normalizamos los valores de la cantidad que se gasta en vinos
+
+```{r}
+normalize<-function(x){
+  return ( (x-min(x))/(max(x)-min(x)))
+}
+
+dataset_norm<-as.data.frame(lapply(dataset,FUN=normalize))
+summary(dataset_norm$MntWines)
+```
+
+Datos Originales
+
+```{r}
+head(dataset$MntWines)
+```
+
+Datos Normalizados
+
+```{r}
+head(dataset_norm)
+```
+
+Muestreo para Entrenamiento
+
+```{r}
+indice <- sample(2, nrow(dataset_norm), replace = TRUE, prob = c(0.7,0.3))
+dataset_train <- dataset_norm[indice==1,]
+dataset_test  <- dataset_norm[indice==2,]
+```
+
+El Modelo de la Red Neuronal
+
+```{r}
+library(neuralnet)
+attach(dataset)
+
+dataset_model <- neuralnet(MntWines ~ Education + Marital_Status + Income + Kidhome + Teenhome + Age, data = dataset_train)
+
+str(dataset_model)
+```
+
+Ploteo de la Red Neuronal
+
+```{r}
+plot(dataset_model, rep = "best")
+```
+
+Evaluamos de la performance de nuestro modelo
+
+```{r}
+model_results <- compute(dataset_model,dataset_test[1:6])
+predicted_MntWines <- model_results$net.result
+```
+
+Monto Gastado en Vino Pronósticado Vs. Monto Gastado en Vino Actual en el dataset
+
+```{r}
+cor(predicted_MntWines,dataset_test$MntWines)
+```
+
+Desnormalizando los resultados
+
+```{r}
+str_max <- max(dataset$MntWines) 
+str_min <- min(dataset$MntWines)
+
+unnormalize <- function(x, min, max) { 
+  return( (max - min)*x + min )
+}
+
+ActualMntWines_pred <- unnormalize(predicted_MntWines,str_min,str_max)
+head(ActualMntWines_pred)
+```
+
+Ahora mejoraremos el desempeño de nuestro modelo
+
+```{r}
+dataset_model2 <- neuralnet(MntWines ~ Education + Marital_Status + Income + Kidhome + Teenhome + Age , data = dataset_train, hidden = c(2,4))
+
+plot(dataset_model2 ,rep = "best")
+```
+
+Performance de nuestro modelo mejorado
+
+```{r}
+model_results2 <- compute(dataset_model2,dataset_test[1:6])
+predicted_Mntwines2<-model_results2$net.result
+cor(predicted_Mntwines2,dataset_test$MntWines)
+```
+
+# Interpretación de Resultados y Conclusiones
+
+Los coeficientes obtenidos en la gráfica de la red neuronal nos indica el factor por el cual debe considerarse cada variable, para obtener la cantidad de dinero que gasta un cliente en el consumo de vinos, pero también este mismo modelo se puede aplicar para cualquier categoría que se quiera estudiar como ser las otras cantidades de consumo de los otros productos. Sin embargo, este modelo necesita ser mejorado todavía ya que tiene un error cerca del 13% y se debería tratar de reducir este error al mínimo posible. 
+
+En conclusión, el modelo de red neuronal propuesto fue capaz de analizar información clave sobre los clientes a partir de datos básicos como ser sus ingresos, edad, familia y otros para predecir que cantidad de dinero pueden llegar a gastar en vinos y esto representa una herramienta útil para que las empresas puedan realizar el Análisis de Personalidad de los Clientes y adaptar esta información a su cadena de suministros, y esto puede llegar a generar mejores resultados para cualquier empresa. 
+
